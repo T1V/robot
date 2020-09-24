@@ -19,7 +19,9 @@ ifeq ($(UNAME), Darwin)
 	CXX    = clang++
 	OUTPUT = ../Binaries/Mac/
 else
+ifndef $(CXX)
 	CXX    = g++
+endif
 	OUTPUT = ../Binaries/Linux/
 endif
 
@@ -40,7 +42,9 @@ else
 	ifeq ($(UNAME), Darwin)
 		CXXFLAGS += -stdlib=libc++ -x objective-c++
 	else
+	ifndef $(CXX)
 		CXXFLAGS += -s
+	endif
 	endif
 
 endif

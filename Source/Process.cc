@@ -997,7 +997,7 @@ ProcessList Process::GetList (const char* name)
 
 	// Loop through all system processes
 	int32 count = size / sizeof (int32);
-	for (uintptr i = 0; i < count; ++i)
+	for (int32 i = 0; i < count; ++i)
 	{
 		Process process;
 		// Attempt to open and match current process
